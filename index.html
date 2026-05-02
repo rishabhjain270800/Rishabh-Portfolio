@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishabh Jain | Product Portfolio</title>
     <meta name="description" content="I build data-driven product ecosystems that help brands move from insights to execution.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rishabh Jain | Product Portfolio">
+    <meta property="og:description" content="I build data-driven product ecosystems that help brands move from insights to execution.">
+    <meta property="og:type" content="website">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +35,11 @@
                 <a href="#impact">Impact</a>
             </nav>
             <div class="nav-socials">
-                <a href="mailto:rishabhjain3615@gmail.com">Contact</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="mailto:rishabhjain3615@gmail.com" class="magnetic-btn">Contact</a>
             </div>
         </header>
     </div>
@@ -40,8 +53,9 @@
                 <h1>I build product<br><span class="text-gradient">ecosystems.</span></h1>
                 <p class="subtitle">I specialize in creating end-to-end data-backed tools, focusing on systemic impact rather than isolated features.</p>
                 <div class="hero-actions">
-                    <a href="#portfolio" class="btn-primary">View Selected Work</a>
-                    <a href="https://www.linkedin.com/in/rishabh-jain-99a2b11ab/" target="_blank" rel="noopener noreferrer" class="btn-secondary linkedin-btn">LinkedIn Profile</a>
+                    <a href="#portfolio" class="btn-primary magnetic-btn" aria-label="View Selected Work">View Selected Work</a>
+                    <a href="https://www.linkedin.com/in/rishabh-jain-99a2b11ab/" target="_blank" rel="noopener noreferrer" class="btn-secondary linkedin-btn magnetic-btn" aria-label="LinkedIn Profile">LinkedIn Profile</a>
+                </div>
                 </div>
             </div>
         </section>
@@ -66,6 +80,7 @@
                         <p>It includes multiple interconnected tools designed to solve marketing, planning, analytics, and brand strategy problems at scale.</p>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -74,10 +89,19 @@
             <div class="container">
                 <h2 class="section-title text-center fade-in">Products I've Built</h2>
                 
+                <div class="portfolio-filters fade-in">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="strategy">Strategy</button>
+                    <button class="filter-btn" data-filter="execution">Execution</button>
+                    <button class="filter-btn" data-filter="intelligence">Intelligence</button>
+                </div>
+                
+                <div class="portfolio-grid">
+                
                 <!-- Product 1: GradGlobe -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="execution strategy">
                     <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="GradGlobe Ecosystem">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="GradGlobe Ecosystem" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -111,9 +135,9 @@
                 </div>
 
                 <!-- Product 2: Real Estate Product -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="execution">
                     <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Real Estate Ecosystem Dashboard">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Real Estate Ecosystem Dashboard" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -147,9 +171,9 @@
                 </div>
 
                 <!-- Product 3: Meta -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="execution">
                     <div class="product-gallery">
-                        <img src="meta-whatsapp.png" alt="WhatsApp Automation Engine">
+                        <img src="meta-whatsapp.png" alt="WhatsApp Automation Engine" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -183,9 +207,9 @@
                 </div>
 
                 <!-- Product 4: Pulse Engage -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="execution">
                     <div class="product-gallery">
-                        <img src="https://images.openai.com/static-rsc-4/_2-ms8S5MVSbKuua-2QEJCK-PvEZnNWU1_J14XhxhxH7g7-e5c8SXeKKtQmgkWbOMY7OXyzsIm8RnkM7Sdy55-xYmHN5hq1s3TNOmcNYODO5_eENT0o8xxEdeCfsTFmboqSxsWfbM2Ww_Sesm3s_AP71Abi2bsTIumDrlsTdzNSk0UBL_3j9tuoD7f2aYa7i?purpose=fullsize" alt="Pulse Engage Screen">
+                        <img src="https://images.openai.com/static-rsc-4/_2-ms8S5MVSbKuua-2QEJCK-PvEZnNWU1_J14XhxhxH7g7-e5c8SXeKKtQmgkWbOMY7OXyzsIm8RnkM7Sdy55-xYmHN5hq1s3TNOmcNYODO5_eENT0o8xxEdeCfsTFmboqSxsWfbM2Ww_Sesm3s_AP71Abi2bsTIumDrlsTdzNSk0UBL_3j9tuoD7f2aYa7i?purpose=fullsize" alt="Pulse Engage Screen" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -219,9 +243,9 @@
                 </div>
 
                 <!-- Product 5: Brand Book Tool -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="intelligence strategy">
                     <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Brand Book Tool Screen">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Brand Book Tool Screen" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -255,9 +279,9 @@
                 </div>
 
                 <!-- Product 6: Pulse Shift -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="intelligence strategy">
                     <div class="product-gallery">
-                        <img src="https://images.openai.com/static-rsc-4/l-rhk2rMYYpmn1WZabAOO3iXk8jvyxFWoXgcFthwmzhVfzAfhT958PucNN7koIF3dG1JLtfncqT0sVZKfVroNvCTCxs6mdbLzNqEQzdHvUvILUPGbp5MlsQf4oG9naUGkKYm9KyTzpImNS0zbACOSUxGw3HQ8-Zjg4BJjPufCwY-jgEaRCpZmWly93w6-RXT?purpose=fullsize" alt="Pulse Shift Screen">
+                        <img src="https://images.openai.com/static-rsc-4/l-rhk2rMYYpmn1WZabAOO3iXk8jvyxFWoXgcFthwmzhVfzAfhT958PucNN7koIF3dG1JLtfncqT0sVZKfVroNvCTCxs6mdbLzNqEQzdHvUvILUPGbp5MlsQf4oG9naUGkKYm9KyTzpImNS0zbACOSUxGw3HQ8-Zjg4BJjPufCwY-jgEaRCpZmWly93w6-RXT?purpose=fullsize" alt="Pulse Shift Screen" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -288,9 +312,9 @@
                 </div>
 
                 <!-- Product 7: Pulse Scout -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="intelligence">
                     <div class="product-gallery">
-                        <img src="https://images.openai.com/static-rsc-4/7cjNMlQNmgSZejaRARU7kNlbQ0gzrV405daBtAYPFybfSvoyVMkwiGxYWvC6LYCdkTX4idFufU5ajMUMtEG4f0vIzIaCiCi9tdB7bqOeBsKuJK8FcJ6r3Y9Fxj9GS_5vHUQY2IO1okKtARazcm1GT5mh6h5rwfPtcSoTwbJIypABGqzoTXHikIYb3gt-quaf?purpose=fullsize" alt="Pulse Scout Screen">
+                        <img src="https://images.openai.com/static-rsc-4/7cjNMlQNmgSZejaRARU7kNlbQ0gzrV405daBtAYPFybfSvoyVMkwiGxYWvC6LYCdkTX4idFufU5ajMUMtEG4f0vIzIaCiCi9tdB7bqOeBsKuJK8FcJ6r3Y9Fxj9GS_5vHUQY2IO1okKtARazcm1GT5mh6h5rwfPtcSoTwbJIypABGqzoTXHikIYb3gt-quaf?purpose=fullsize" alt="Pulse Scout Screen" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -321,9 +345,9 @@
                 </div>
 
                 <!-- Product 8: Pulse Plan -->
-                <div class="product-card fade-in">
+                <div class="product-card fade-in" data-category="strategy">
                     <div class="product-gallery">
-                        <img src="https://images.openai.com/static-rsc-4/u0rAjTPBYv0-QQsljAocD351zm9ZeDRiB5TWA5eKEjMVSk4LhwrHMFXwD81uo2xAman_f1P5y-NT3tQ-FCLPuLKoPIgce0THDXHenW3rRihgN8OhYcmsXGeTumrq8St9DRSjxk2gitFrxfrdx6XIsTOQox_lJ62-Gmp0hnBFjY5dakBfVrEKMAEL3FRwg3yW?purpose=fullsize" alt="Pulse Plan Screen">
+                        <img src="https://images.openai.com/static-rsc-4/u0rAjTPBYv0-QQsljAocD351zm9ZeDRiB5TWA5eKEjMVSk4LhwrHMFXwD81uo2xAman_f1P5y-NT3tQ-FCLPuLKoPIgce0THDXHenW3rRihgN8OhYcmsXGeTumrq8St9DRSjxk2gitFrxfrdx6XIsTOQox_lJ62-Gmp0hnBFjY5dakBfVrEKMAEL3FRwg3yW?purpose=fullsize" alt="Pulse Plan Screen" loading="lazy" class="parallax-img">
                     </div>
                     <div class="product-info">
                         <div class="product-info-left">
@@ -353,6 +377,7 @@
                     </div>
                 </div>
 
+                </div>
             </div>
         </section>
 
@@ -395,6 +420,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -435,6 +461,7 @@
                             <li>CRM & Campaign Systems</li>
                         </ul>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -500,6 +527,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -514,6 +542,7 @@
                         LinkedIn
                     </a>
                 </div>
+                </div>
             </div>
         </section>
     </main>
@@ -525,7 +554,7 @@
             <h2 class="section-title" style="margin-bottom: 1rem; font-size: 2.5rem;">Contact Me</h2>
             <p class="subtitle mb-4" style="color: var(--text-secondary);">Feel free to reach out via phone or email.</p>
             <div class="modal-links">
-                <a href="tel:+919876543210" class="btn-secondary modal-btn">
+                <a href="tel:+919170483615" class="btn-secondary modal-btn">
                     <span style="font-size: 1.5rem; margin-right: 10px;">📞</span> Call Me
                 </a>
                 <a href="mailto:rishabhjain3615@gmail.com" class="btn-secondary modal-btn">
